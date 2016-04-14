@@ -3,7 +3,7 @@ $("form#frm_fileUpload").submit(function() {
 
 	$.ajax({
 			type: 'POST',
-			url: '../FileService/saveFile.php',
+			url: '../php/saveFile.php',
 			data: new FormData(this),
 			async: false,
 			success: function(result) {

@@ -1,6 +1,6 @@
 <?php
-	require 'FileService.php';
-	require '../vendor/RandomStringGenerator/RandomStringGenerator.php';
+	require '../../FileService/FileService.php';
+	require '../../vendor/RandomStringGenerator/RandomStringGenerator.php';
 
 	$file = $_FILES;
 
