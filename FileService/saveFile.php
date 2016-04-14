@@ -17,7 +17,8 @@
 		$randStrGen->setStringHash("md5", $randString);
 		$randStringHash = $randStrGen->getStringHash();
 
-		$message = $fileService->saveFile($randStringHash, $extension, 0777);
+		 $fileService->setChmod(0777);
+		$message = $fileService->saveFile($randStringHash, $extension);
 	} else {
 		$message = 2;
 	}
