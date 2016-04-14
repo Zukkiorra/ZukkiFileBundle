@@ -24,7 +24,7 @@ Class FileService
 
 	public function setChmod($chmod)
 	{
-		$this->$chmod = $chmod;
+		$this->chmod = $chmod;
 	}
 
 	public function checkExtension($extension)
@@ -46,6 +46,25 @@ Class FileService
 			return 1;
 		} else {
 			return 0;
+		}
+	}
+
+	public function deleteFile($fileName)
+	{
+		$fullPath = $this->location.$fileName;
+
+		if (is_file($fullPath)) {
+
+		   chmod($fullPath, $this->chmod);
+
+		   if (unlink($fullPath)) {
+		      return 'File deleted';
+		   } else {
+		      return 'Cannot remove that file';
+		   }
+
+		} else {
+		  return 'File does not exist';
 		}
 	}
 }
