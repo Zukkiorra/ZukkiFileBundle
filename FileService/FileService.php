@@ -9,7 +9,7 @@ Class FileService
 
 	public function setFile($file)
 	{
-		$this->file = $file['file'];
+		$this->file = $file;
 	}
 
 	public function setExtensions($extensions)

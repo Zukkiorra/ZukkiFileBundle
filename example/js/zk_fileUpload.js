@@ -8,7 +8,8 @@ $("form#frm_fileUpload").submit(function() {
 			async: false,
 			success: function(result) {
 				console.log(result);
-				switch(parseInt(result)) {
+				var msgJson = JSON.parse(result);
+				switch(parseInt(msgJson[0])) {
 					case 0:
 						alert("error while uploading file");
 					break;
@@ -16,10 +17,10 @@ $("form#frm_fileUpload").submit(function() {
 						alert("success");
 					break; 
 					case 2:
-						alert("wrong extension");
+						alert("wrong extension for " + msgJson[1] + " file");
 					break;
 					case 3:
-						alert("file is too large");
+						alert("file " + msgJson[1] + " is too large");
 					break; 
 				}
 			},
