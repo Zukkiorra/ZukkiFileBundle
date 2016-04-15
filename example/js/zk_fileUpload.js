@@ -17,6 +17,9 @@ $("form#frm_fileUpload").submit(function() {
 					break; 
 					case 2:
 						alert("wrong extension");
+					break;
+					case 3:
+						alert("file is too large");
 					break; 
 				}
 			},

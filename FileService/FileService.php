@@ -67,4 +67,9 @@ Class FileService
 		  return 'File does not exist';
 		}
 	}
+
+	public function getFileSize()
+	{
+		return $this->file['size'];
+	}
 }
